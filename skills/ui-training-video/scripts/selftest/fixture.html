@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- CSP without 'unsafe-eval': proves capture.js never evaluates a string inside the page. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'">
+<title>capture.js self-test</title>
+<style>
+  body { margin: 0; font: 14px sans-serif; } .nav { position: fixed; left: 0; top: 0; width: 200px; }
+  main { margin-left: 220px; padding: 20px; } .fx_card__a1 { border: 1px solid #ccc; margin: 12px 0; padding: 10px; }
+  .fx_cardTitle__b2 { font-weight: bold; } .tall { height: 2400px; background: #eef; } button { margin: 4px; }
+</style></head><body>
+<div class="nav"><a class="nav-link" href="#">Overview</a><br><a class="nav-link" href="#">↳ Check Detail</a></div>
+<main>
+  <!-- a heading with a toggle glyph in front: "^Getting started" must NOT match, "Getting started" must -->
+  <div class="fx_card__a1"><span class="fx_cardTitle__b2">▾ Getting started — a walkthrough</span></div>
+  <!-- the same words start an ancestor and a leaf: pick:"last" must take the leaf -->
+  <div id="outer"><div><span id="leaf">Errors: 12 items</span> · Warnings: 3</div><p>more text below</p></div>
+  <!-- an opener whose TITLE names the write behind it: refused without `safe`, allowed with it -->
+  <button id="run" title="Queue a run of this job" onclick="document.getElementById('dlg').style.display='block'">Run</button>
+  <div id="dlg" style="display:none" class="fx_card__a1">Run check <button id="queue">Queue run</button></div>
+  <!-- a plain write control: always refused -->
+  <button id="save">Save config</button>
+  <!-- two-step: first press arms (local state), the armed button reads "Confirm" and is refused -->
+  <button id="bf" onclick="this.textContent='Confirm — retry 13'">Retry failed (13)</button>
+  <!-- options on separate lines: whitespace is normalised before matching -->
+  <select id="win"><option>7 days</option>
+<option>30 days</option>
+<option>90 days</option></select>
+  <!-- two figures sharing one parent: tagging both with closest:"div" must be reported, not overwrite -->
+  <div id="figs"><strong>Revenue — 62.50%</strong> <strong>Refunds — 20.00%</strong></div>
+  <div class="tall" id="tall">a card taller than the screen</div>
+  <div id="below">far below the fold</div>
+</main></body></html>

@@ -1,0 +1,192 @@
+{
+ "name": "sample-app-training",
+ "lang": "vi",
+ "voice": "vi-VN-NamMinhNeural",
+ "cards": {
+  "intro": {
+   "eyebrow": "Sample app · Cách dùng",
+   "title": [
+    "Orders"
+   ],
+   "sub": "Tìm đơn, đọc đơn, xử lý đơn"
+  },
+  "outro": {
+   "eyebrow": "Tóm lại",
+   "items": [
+    "Lọc → mở → xử lý",
+    "Thao tác ghi luôn hỏi trước",
+    "Cảm ơn đã xem"
+   ]
+  }
+ },
+ "scenes": [
+  {
+   "id": "intro",
+   "card": "intro",
+   "chapter": "",
+   "lines": [
+    {
+     "text": "Video ngắn này chỉ cách tìm và xử lý một đơn hàng."
+    }
+   ]
+  },
+  {
+   "id": "orders",
+   "shot": "orders",
+   "chapter": "Orders",
+   "focus": [
+    "filters",
+    "table"
+   ],
+   "lines": [
+    {
+     "text": "Mở Orders ở thanh bên trái.",
+     "mark": [
+      {
+       "box": "nav",
+       "label": "Orders",
+       "click": true
+      }
+     ],
+     "focus": [
+      "nav"
+     ]
+    },
+    {
+     "text": "Lọc theo ngày hoặc trạng thái, rồi xem danh sách bên dưới.",
+     "mark": [
+      {
+       "box": "filters",
+       "label": "Filters"
+      },
+      {
+       "box": "table",
+       "label": "Orders"
+      }
+     ]
+    },
+    {
+     "text": "Export tải danh sách về dạng bảng tính.",
+     "mark": [
+      {
+       "box": "export",
+       "label": "Export"
+      }
+     ],
+     "focus": [
+      "export"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "status_tip",
+   "shot": "status_tip",
+   "chapter": "Orders · Status",
+   "focus": [
+    "tip"
+   ],
+   "lines": [
+    {
+     "text": "Rê chuột lên trạng thái để xem ý nghĩa.",
+     "mark": [
+      {
+       "box": "tip",
+       "label": "What it means"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "order_detail",
+   "shot": "order_detail",
+   "chapter": "One order",
+   "focus": [
+    "drawer"
+   ],
+   "lines": [
+    {
+     "text": "Bấm vào một đơn để mở. Payment cho biết đơn được trả thế nào.",
+     "mark": [
+      {
+       "box": "payment",
+       "label": "Payment"
+      }
+     ],
+     "focus": [
+      "payment"
+     ]
+    },
+    {
+     "text": "Nút Refund ở đây — ta chỉ chỉ vào, không bấm.",
+     "mark": [
+      {
+       "box": "refund",
+       "label": "Refund"
+      }
+     ],
+     "focus": [
+      "refund"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "resend_armed",
+   "shot": "resend_armed",
+   "chapter": "One order · Resend",
+   "focus": [
+    "armed"
+   ],
+   "lines": [
+    {
+     "text": "Resend receipt sẽ hỏi trước. Confirm là gửi; dấu chéo là huỷ.",
+     "mark": [
+      {
+       "box": "armed",
+       "label": "Confirm"
+      },
+      {
+       "box": "cancel",
+       "label": "Cancel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "new_order",
+   "shot": "new_order",
+   "chapter": "New order",
+   "focus": [
+    "form"
+   ],
+   "lines": [
+    {
+     "text": "New order mở một form. Chưa có gì được tạo cho tới khi bấm Save.",
+     "mark": [
+      {
+       "box": "form",
+       "label": "The form"
+      },
+      {
+       "box": "save",
+       "label": "Save"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "card": "outro",
+   "chapter": "",
+   "lines": [
+    {
+     "text": "Chỉ vậy thôi. Cảm ơn đã xem."
+    }
+   ]
+  }
+ ]
+}

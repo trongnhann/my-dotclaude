@@ -1,0 +1,15 @@
+{
+  "name": "ui-training-video",
+  "private": true,
+  "description": "Narrated walkthrough video of a web UI: real screenshots, camera moves, highlights, captions.",
+  "scripts": {
+    "studio": "remotion studio src/index.jsx"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.529",
+    "puppeteer-core": "23.11.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.529"
+  }
+}

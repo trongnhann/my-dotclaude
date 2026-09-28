@@ -1,0 +1,192 @@
+{
+ "name": "sample-app-training",
+ "lang": "en",
+ "voice": "en-US-AndrewNeural",
+ "cards": {
+  "intro": {
+   "eyebrow": "Sample app · How to use it",
+   "title": [
+    "Orders"
+   ],
+   "sub": "Find an order, read it, act on it"
+  },
+  "outro": {
+   "eyebrow": "In short",
+   "items": [
+    "Filter → open → act",
+    "Anything that writes asks first",
+    "Thanks for watching"
+   ]
+  }
+ },
+ "scenes": [
+  {
+   "id": "intro",
+   "card": "intro",
+   "chapter": "",
+   "lines": [
+    {
+     "text": "This short video shows how to find and handle an order."
+    }
+   ]
+  },
+  {
+   "id": "orders",
+   "shot": "orders",
+   "chapter": "Orders",
+   "focus": [
+    "filters",
+    "table"
+   ],
+   "lines": [
+    {
+     "text": "Open Orders from the sidebar.",
+     "mark": [
+      {
+       "box": "nav",
+       "label": "Orders",
+       "click": true
+      }
+     ],
+     "focus": [
+      "nav"
+     ]
+    },
+    {
+     "text": "Filter by date or status, then read the list below.",
+     "mark": [
+      {
+       "box": "filters",
+       "label": "Filters"
+      },
+      {
+       "box": "table",
+       "label": "Orders"
+      }
+     ]
+    },
+    {
+     "text": "Export downloads the list as a spreadsheet.",
+     "mark": [
+      {
+       "box": "export",
+       "label": "Export"
+      }
+     ],
+     "focus": [
+      "export"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "status_tip",
+   "shot": "status_tip",
+   "chapter": "Orders · Status",
+   "focus": [
+    "tip"
+   ],
+   "lines": [
+    {
+     "text": "Hover the status to see what it means.",
+     "mark": [
+      {
+       "box": "tip",
+       "label": "What it means"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "order_detail",
+   "shot": "order_detail",
+   "chapter": "One order",
+   "focus": [
+    "drawer"
+   ],
+   "lines": [
+    {
+     "text": "Click an order to open it. Payment shows how it was paid.",
+     "mark": [
+      {
+       "box": "payment",
+       "label": "Payment"
+      }
+     ],
+     "focus": [
+      "payment"
+     ]
+    },
+    {
+     "text": "Refund is here — we are only pointing at it.",
+     "mark": [
+      {
+       "box": "refund",
+       "label": "Refund"
+      }
+     ],
+     "focus": [
+      "refund"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "resend_armed",
+   "shot": "resend_armed",
+   "chapter": "One order · Resend",
+   "focus": [
+    "armed"
+   ],
+   "lines": [
+    {
+     "text": "Resend receipt asks first. Confirm sends it; the cross cancels.",
+     "mark": [
+      {
+       "box": "armed",
+       "label": "Confirm"
+      },
+      {
+       "box": "cancel",
+       "label": "Cancel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "new_order",
+   "shot": "new_order",
+   "chapter": "New order",
+   "focus": [
+    "form"
+   ],
+   "lines": [
+    {
+     "text": "New order opens a form. Nothing is created until you press Save.",
+     "mark": [
+      {
+       "box": "form",
+       "label": "The form"
+      },
+      {
+       "box": "save",
+       "label": "Save"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "card": "outro",
+   "chapter": "",
+   "lines": [
+    {
+     "text": "That is all it takes. Thanks for watching."
+    }
+   ]
+  }
+ ]
+}

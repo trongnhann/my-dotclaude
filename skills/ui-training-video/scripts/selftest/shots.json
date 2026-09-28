@@ -1,0 +1,29 @@
+{
+ "base": "FIXTURE_URL",
+ "cdp": "http://127.0.0.1:9444",
+ "viewport": { "width": 1280, "height": 720, "scale": 1 },
+ "cssModule": "fx_",
+ "neverClick": "confirm|queue|save|delete|submit",
+ "shots": [
+  { "name": "t_text", "url": "", "steps": [
+     { "tag": "@cardTitle", "text": "Getting started", "closest": "@card", "as": "card" },
+     { "tag": "div,span", "text": "^Errors:", "pick": "last", "as": "leaf" },
+     { "tag": "select", "text": "^7 days 30 days 90 days$", "as": "win" },
+     { "tag": ".nav-link", "text": "^↳ check detail$", "as": "nav" } ],
+    "boxes": { "card": "[data-tv=card]", "leaf": "[data-tv=leaf]", "win": "[data-tv=win]", "nav": "[data-tv=nav]" } },
+  { "name": "t_anchor", "url": "", "steps": [ { "tag": "@cardTitle", "text": "^Getting started", "as": "x" } ], "boxes": {} },
+  { "name": "t_safe", "url": "", "steps": [
+     { "click": "#run", "safe": "opens the dialog only; Queue run is never pressed", "wait": 300 },
+     { "tag": "button", "text": "^Queue run$", "as": "queue" } ],
+    "boxes": { "dlg": "#dlg", "queue": "[data-tv=queue]" } },
+  { "name": "t_refuse_title", "url": "", "steps": [ { "click": "#run" } ], "boxes": {} },
+  { "name": "t_refuse_save", "url": "", "steps": [ { "click": "button", "text": "^Save config$" } ], "boxes": {} },
+  { "name": "t_twostep", "url": "", "steps": [ { "click": "#bf", "wait": 300 }, { "tag": "button", "text": "^Confirm", "as": "armed" } ],
+    "boxes": { "armed": "[data-tv=armed]" } },
+  { "name": "t_twostep_second", "url": "", "steps": [ { "click": "#bf", "wait": 300 }, { "click": "#bf" } ], "boxes": {} },
+  { "name": "t_collide", "url": "", "steps": [
+     { "tag": "strong", "text": "^Revenue", "closest": "div", "as": "a" },
+     { "tag": "strong", "text": "^Refunds", "closest": "div", "as": "b" } ], "boxes": {} },
+  { "name": "t_offscreen", "url": "", "boxes": { "tall": "#tall", "below": "#below" } }
+ ]
+}

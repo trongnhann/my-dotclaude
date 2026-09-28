@@ -1,0 +1,37 @@
+{
+ "base": "http://localhost:3000/admin/",
+ "cdp": "http://127.0.0.1:9333",
+ "viewport": { "width": 1600, "height": 900, "scale": 1.2 },
+ "cssModule": "app_",
+ "neverClick": "delete|remove|refund|submit|save|confirm|publish|send|queue|charge",
+ "shots": [
+  { "name": "orders", "url": "orders", "waitFor": "@table",
+    "steps": [
+      { "tag": ".nav-link", "text": "^Orders$", "as": "nav" },
+      { "tag": "button", "text": "^Export$", "as": "export" } ],
+    "boxes": { "nav": "[data-tv=nav]", "filters": "@toolbar", "table": "@table", "export": "[data-tv=export]" } },
+
+  { "name": "status_tip", "url": "orders", "waitFor": "@table",
+    "steps": [ { "scroll": "@table", "top": 60 }, { "hover": "@statusInfo" } ],
+    "boxes": { "tip": "@tooltip", "status": "@statusInfo" } },
+
+  { "name": "order_detail", "url": "orders?id=1001", "waitFor": "@drawer",
+    "steps": [
+      { "tag": "@drawer strong", "text": "^Payment$", "closest": "@section", "as": "payment" },
+      { "tag": "@drawer button", "text": "^Refund", "as": "refund" } ],
+    "boxes": { "drawer": "@drawer", "payment": "[data-tv=payment]", "refund": "[data-tv=refund]" } },
+
+  { "name": "resend_armed", "url": "orders?id=1001", "waitFor": "@drawer",
+    "steps": [
+      { "click": "@drawer button", "text": "^Resend receipt$", "wait": 800 },
+      { "tag": "@drawer button", "text": "^Confirm", "as": "armed" } ],
+    "boxes": { "armed": "[data-tv=armed]", "cancel": "@drawer [title=Cancel]" } },
+
+  { "name": "new_order", "url": "orders", "waitFor": "@table",
+    "steps": [
+      { "click": "button", "text": "^New order$", "safe": "opens the form only; its Save is never pressed", "wait": 1000 },
+      { "waitFor": ".ReactModal__Content" },
+      { "tag": ".ReactModal__Content button", "text": "^Save$", "as": "save" } ],
+    "boxes": { "form": ".ReactModal__Content", "save": "[data-tv=save]" } }
+ ]
+}
